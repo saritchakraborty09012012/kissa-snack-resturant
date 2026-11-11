@@ -69,7 +69,7 @@ for (const [w, h] of sizes) {
   await page.screenshot({ path: `${out}/${tag}-booking.png` })
 
   const filled = await page.evaluate(() => {
-    const name = document.querySelector('input[placeholder="Your name"]')
+    const name = document.querySelector('input[placeholder="Full name"]')
     const phone = document.querySelector('input[placeholder="+91"]')
     if (name) {
       const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set
@@ -86,7 +86,7 @@ for (const [w, h] of sizes) {
 
   await page.evaluate(() => {
     const form = document.querySelector('form')
-    const submit = [...document.querySelectorAll('button[type="submit"]')].find((b) =>
+    const submit = [...document.querySelectorAll('[role="dialog"] button[type="submit"]')].find((b) =>
       /request/i.test(b.textContent || ''),
     )
     if (submit) submit.click()

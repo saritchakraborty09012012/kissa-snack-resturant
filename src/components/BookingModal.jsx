@@ -75,23 +75,20 @@ export default function BookingModal({ open, onClose }) {
 
   const change = (key) => (e) => setForm((f) => ({ ...f, [key]: e.target.value }))
 
-  const submit = async (e) => {
+  const submit = (e) => {
     e.preventDefault()
     if (state === 'sending') return
     setState('sending')
     setError('')
-    try {
-      await fetch('/api/reserve', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-      })
-    } catch {
-      /* this is a demo — never block the sample confirmation */
-    }
+    // fire-and-forget: the demo confirmation never waits on the API
+    fetch('/api/reserve', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(form),
+    }).catch(() => {})
     setState('idle')
     showSample()
-    window.setTimeout(() => onClose?.(), 600)
+    window.setTimeout(() => onClose?.(), 500)
   }
 
   return (
