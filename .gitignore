@@ -1,0 +1,8 @@
+node_modules
+dist
+data
+_analysis
+_tools
+*.local
+.DS_Store
+screens

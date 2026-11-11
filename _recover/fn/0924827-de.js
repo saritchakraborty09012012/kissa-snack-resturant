@@ -1,0 +1,22 @@
+function de(t) {
+  return h !== t && (e.useProgram(t), (h = t), !0)
+}
+let fe = { 100: e.FUNC_ADD, 101: e.FUNC_SUBTRACT, 102: e.FUNC_REVERSE_SUBTRACT }
+;((fe[103] = e.MIN), (fe[104] = e.MAX))
+let pe = {
+  200: e.ZERO,
+  201: e.ONE,
+  202: e.SRC_COLOR,
+  204: e.SRC_ALPHA,
+  210: e.SRC_ALPHA_SATURATE,
+  208: e.DST_COLOR,
+  206: e.DST_ALPHA,
+  203: e.ONE_MINUS_SRC_COLOR,
+  205: e.ONE_MINUS_SRC_ALPHA,
+  209: e.ONE_MINUS_DST_COLOR,
+  207: e.ONE_MINUS_DST_ALPHA,
+  211: e.CONSTANT_COLOR,
+  212: e.ONE_MINUS_CONSTANT_COLOR,
+  213: e.CONSTANT_ALPHA,
+  214: e.ONE_MINUS_CONSTANT_ALPHA,
+}

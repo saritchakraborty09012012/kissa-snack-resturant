@@ -1,0 +1,14 @@
+function H(e, t) {
+  return [
+    `NO_COMPRESSION`,
+    `RLE_COMPRESSION`,
+    `ZIPS_COMPRESSION`,
+    `ZIP_COMPRESSION`,
+    `PIZ_COMPRESSION`,
+    `PXR24_COMPRESSION`,
+    `B44_COMPRESSION`,
+    `B44A_COMPRESSION`,
+    `DWAA_COMPRESSION`,
+    `DWAB_COMPRESSION`,
+  ][he(e, t)]
+}

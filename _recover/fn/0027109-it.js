@@ -1,0 +1,4 @@
+function it(e) {
+  for (var t = [], n = 0; 31 > n; n++) t.push(e)
+  return t
+}
