@@ -975,6 +975,34 @@ select.field option {
   }
 }
 
+/* phones — the plate fills the band between the header and the dish copy */
+@media (max-width: 767px) {
+  .plate-media {
+    left: 50%;
+    top: 45%;
+    width: min(92vw, 42vh, 430px);
+  }
+  .plate-glow {
+    left: 50%;
+    top: 44%;
+    width: min(102vw, 50vh, 480px);
+    height: min(102vw, 50vh, 480px);
+  }
+  .plate-smoke {
+    left: 50%;
+    top: 46%;
+    width: min(132vw, 96vh);
+  }
+  .plate-smoke-b {
+    width: 92vw;
+  }
+  .plate-embers {
+    left: 50%;
+    top: 45%;
+    width: min(92vw, 42vh, 430px);
+  }
+}
+
 /* short viewports — landscape phones and small laptop screens */
 @media (max-height: 620px) {
   .hero-inner {
@@ -983,23 +1011,6 @@ select.field option {
   }
   .hero-compact-hide {
     display: none !important;
-  }
-  .plate-media {
-    top: 30%;
-    width: min(64vw, 30vh, 320px);
-  }
-  .plate-glow {
-    top: 29%;
-    width: min(72vw, 36vh, 360px);
-    height: min(72vw, 36vh, 360px);
-  }
-  .plate-smoke {
-    top: 31%;
-    width: min(96vw, 64vh);
-  }
-  .plate-embers {
-    top: 30%;
-    width: min(64vw, 30vh, 320px);
   }
   .stage-longhide {
     display: none !important;
@@ -1012,6 +1023,62 @@ select.field option {
   }
   .stage-rail {
     display: none !important;
+  }
+}
+
+/* short, wide screens — plate moves right so it never fights the copy */
+@media (max-height: 620px) and (min-width: 768px) and (orientation: landscape) {
+  .plate-media {
+    left: 68%;
+    top: 50%;
+    width: min(46vh, 40vw, 340px);
+  }
+  .plate-glow {
+    left: 68%;
+    top: 49%;
+    width: min(54vh, 46vw, 380px);
+    height: min(54vh, 46vw, 380px);
+  }
+  .plate-smoke {
+    left: 66%;
+    top: 50%;
+    width: min(74vh, 60vw);
+  }
+  .plate-smoke-b {
+    width: min(48vh, 38vw);
+  }
+  .plate-embers {
+    left: 68%;
+    top: 50%;
+    width: min(46vh, 40vw, 340px);
+  }
+}
+
+/* short portrait-width screens — plate moves right of the dish copy */
+@media (max-width: 767px) and (max-height: 620px) and (orientation: landscape) {
+  .plate-media {
+    left: 72%;
+    top: 46%;
+    width: min(56vw, 54vh, 260px);
+  }
+  .plate-glow {
+    left: 72%;
+    top: 45%;
+    width: min(66vw, 64vh, 300px);
+    height: min(66vw, 64vh, 300px);
+  }
+  .plate-smoke {
+    left: 70%;
+    top: 46%;
+    width: min(98vw, 86vh);
+  }
+  .plate-smoke-b {
+    width: min(62vw, 52vh);
+  }
+  .plate-embers {
+    left: 72%;
+    top: 46%;
+    width: min(56vw, 54vh, 260px);
   }
 }
 

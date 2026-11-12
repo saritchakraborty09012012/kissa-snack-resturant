@@ -26,7 +26,7 @@ A cinematic, scroll-driven snack restaurant site — chai, comfort food and a ve
 Layout is fluid from 320px phones to 2560px displays:
 
 - fluid `clamp()` type that also respects viewport height, so headlines never push content off-screen;
-- the dish plate is sized with `min(vw, vh)` and re-centres below 1024px; dish copy is bottom-anchored on narrow screens;
+- the dish plate is sized with `min(vw, vh)` and re-centres below 1024px; on phones it is sized to fill the band between the header and the bottom-anchored dish copy (`min(92vw, 42vh, 430px)`), and in landscape it moves right so it never sits behind the text;
 - a compact mode (`max-height: 620px`) for landscape phones and short laptop windows;
 - desktop nav appears at 1280px, burger below that;
 - safe-area padding for notched phones, `overflow-x: clip` everywhere, and 16px form fields on mobile so iOS never zooms.
@@ -126,7 +126,9 @@ The Playwright scripts in `scripts/` assume the dev server is running:
 ```bash
 node scripts/responsive-audit.mjs   # horizontal-overflow audit, 320 → 2560
 node scripts/responsive-shots.mjs   # hero / dish / visit / footer at six viewports
-node scripts/qa-shots.mjs           # hours, menu, stats, map, footer, booking + toast, overlay
+node scripts/measure-plate.mjs      # plate vs copy geometry at any viewport
+node scripts/qa-dom.mjs             # map, sample marks, header, booking + toast
+node scripts/qa-shots.mjs           # section / overlay / booking screenshots
 node scripts/qa2.mjs                # desktop hero, all eight dishes, every section, footer
 node scripts/qa3.mjs                # menu overlay, hover preview, booking flow, mobile sets
 node scripts/qa4.mjs                # menu card rail + mobile footer
